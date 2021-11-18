@@ -1,40 +1,40 @@
 function getFetch() {
     const url = "https://api.football-data.org/v2/competitions/2014/standings"
     fetch(url, {
-        method: "GET",
-        headers:{
-            "X-Auth-Token": "8b290a17f4ef4717b78c9800eb77cb57"
-        }
-    })
-    .then(function (response){
-        if (response.ok){
-            console.log(response)
-            return response.json();
-        }
-    })
-    .then(function(data){
-        console.log(data)
+            method: "GET",
+            headers: {
+                "X-Auth-Token": "8b290a17f4ef4717b78c9800eb77cb57"
+            }
+        })
+        .then(function (response) {
+            if (response.ok) {
+                console.log(response)
+                return response.json();
+            }
+        })
+        .then(function (data) {
+            console.log(data)
 
-        let partidos2 = data.standings[0].table
+            let partidos2 = data.standings[0].table
 
-        
 
-        clasificacionTabla(partidos2)
 
-        spiner()
+            clasificacionTabla(partidos2)
 
-})
+            spiner()
+
+        })
 }
 getFetch();
 
 
 
-function clasificacionTabla(data){
+function clasificacionTabla(data) {
 
-    let  datosPosiciones = document.getElementById("datos_clasificacion")
+    let datosPosiciones = document.getElementById("datos_clasificacion")
 
     for (let i = 0; i < data.length; i++) {
-        const tr =  document.createElement("tr")
+        const tr = document.createElement("tr")
 
         let equipo = document.createElement("tr")
         equipo.innerHTML = data[i].team.name
@@ -70,12 +70,12 @@ function clasificacionTabla(data){
         equipoImg.setAttribute("src", data[i].team.crestUrl);
         equipoImg.classList.add("imagen")
 
-        
-        
+
+
 
         let dataClasificacion = [posicion, equipoImg, equipo, puntos, partidosJugados, partidosGanados, partidosEmpatados, partidosPerdidos, golesAFavor, golesContra, golesDiferencia]
 
-        for (let z =0; z < dataClasificacion.length; z++) {
+        for (let z = 0; z < dataClasificacion.length; z++) {
             const td = document.createElement("td")
             td.append(dataClasificacion[z]);
             tr.appendChild(td)
@@ -83,19 +83,17 @@ function clasificacionTabla(data){
 
         datosPosiciones.appendChild(tr)
 
-        
+
     }
 
 }
 
 
-function spiner(){
+function spiner() {
 
-    let loader = document.getElementById("spiner").style.display= "none";
+    let loader = document.getElementById("spiner").style.display = "none";
 
 
 }
 
 
-
-// clasificacionTabla(posiciones.standings[0].table)

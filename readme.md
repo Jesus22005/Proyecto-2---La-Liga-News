@@ -4,7 +4,7 @@
 
 <p>El presente proyecto consiste en la realizacion de una pagina web con una tematica principal enfocada en el mundo del futbol, exactamente en la liga de futbol española, en la cual los usuarios podran acceder a una interfaz que les brindará informacion detallada sobre noticias, resultados y clasificaciones de los equipos participantes en la temporada 2021 - 2021 de la liga Santander.</p>
 
-<p>Visite La Liga News<a href=""> aqui.</a></p>
+<p>Visite La Liga News<a href="https://laliganews.netlify.app/index.html"> aqui.</a></p>
 
 <h2>Utilidades del Proyecto</h2>
 
